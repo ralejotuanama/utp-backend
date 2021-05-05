@@ -9,10 +9,10 @@
 		<version>2.3.0.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mitocode</groupId>
-	<artifactId>mediapp-backend</artifactId>
+	<groupId>com.utp</groupId>
+	<artifactId>utp-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mediapp-backend</name>
+	<name>utp-backend</name>
 	<description>Backend Proyecto Curso</description>
 
 	<properties>
