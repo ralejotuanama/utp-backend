@@ -14,7 +14,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-//Cuarta clase, clase de apoyo
+
 public class AuthException implements AuthenticationEntryPoint {
 
 	@Override

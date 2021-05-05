@@ -9,8 +9,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.HttpStatus;
@@ -33,7 +32,7 @@ import com.utp.service.IAlumnoService;
 
 @RestController
 @RequestMapping("/alumnos")
-//@CrossOrigin(origins = "localhost:4200")
+
 public class AlumnoController {
 
 	@Autowired	
@@ -62,8 +61,8 @@ public class AlumnoController {
 			throw new ModeloNotFoundException("ID NO ENCONTRADO " + id);
 		}
 		
-		//localhost:8080/pacientes/{id}
-		EntityModel<Alumno> recurso = EntityModel.of(obj); //Antes: new EntityModel<Paciente>(obj);
+		//localhost:8080/alumnos/{id}
+		EntityModel<Alumno> recurso = EntityModel.of(obj); 
 		WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).listarPorId(id));
 		
 		recurso.add(linkTo.withRel("alumno-recurso"));
@@ -71,17 +70,13 @@ public class AlumnoController {
 		return recurso;
 	}
 		
-	/*@PostMapping
-	public ResponseEntity<Paciente> registrar(@Valid @RequestBody Paciente paciente) {
-		Paciente obj = service.registrar(paciente);
-		return new ResponseEntity<Paciente>(obj, HttpStatus.CREATED);
-	}*/
+	
 	
 	@PostMapping
 	public ResponseEntity<Void> registrar(@Valid @RequestBody Alumno alumno) throws Exception{
 		Alumno obj = service.RegistrarCompuesto(alumno);
 		
-		//localhost:8080/pacientes/5
+		//localhost:8080/alumnos/2
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(obj.getIdAlumno()).toUri();
 		

@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 
-//Segunda Clase
+
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
@@ -36,15 +36,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
                 .authorizeRequests()                  
                 .antMatchers("/v2/api-docs/**" ).permitAll()
                 .antMatchers("/v3/api-docs/**" ).permitAll()
-                .antMatchers("/consultas/**" ).authenticated()                
-                .antMatchers("/especialidades/**" ).authenticated()
-                .antMatchers("/examenes/**" ).authenticated()
-                .antMatchers("/medicos/**" ).authenticated()
-                .antMatchers("/menus/**" ).authenticated()
-                .antMatchers("/tokens/anular/**" ).permitAll()
-                .antMatchers("/tokens/**" ).authenticated()                
-                .antMatchers("/consultaexamenes/**" ).authenticated()
-                .antMatchers("/pacientes/**" ).authenticated();
+                .antMatchers("/menus/**" ).authenticated()              
+                .antMatchers("/alumnos/**" ).authenticated()  ;
                 
     }    
 

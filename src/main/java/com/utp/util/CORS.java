@@ -41,7 +41,7 @@ public class CORS implements Filter {
 		} else {
 			chain.doFilter(req, res);
 		}
-		// chain.doFilter(req, res);
+		
 	}
 	
 	@Override
